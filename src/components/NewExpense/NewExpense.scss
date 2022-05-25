@@ -1,0 +1,37 @@
+.new-expense-container{
+    margin: 10px;
+    padding: 30px;
+    border-radius: 25px;
+    color: #000;
+    background-color: violet;
+
+    button {
+        width: 200px;
+        height: 40px;
+        background-color: purple;
+        border: none;
+        border-radius: 10px;
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(235, 85, 235);
+        }
+    }
+
+    label{
+        font-weight: bold;
+    }
+
+    input {
+        border-radius: 10px;
+        border: none;
+        height: 25px;
+        display: block;
+    }
+
+    form {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
