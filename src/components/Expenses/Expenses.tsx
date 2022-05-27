@@ -1,9 +1,14 @@
 import { useState } from "react"
 import ExpenseItem from "../ExpenseItem/ExpenseItem"
 import ExpensesFilter from "../ExpensesFilter/ExpensesFilter"
+import ExpensesList from "../ExpensesList/ExpensesList"
 
 const Expenses = (props: any) => {
     const [yearSelected, setYear] = useState('2020')
+
+    const expensesByYearSelected = props.expensesList.filter((expense : any) => {
+        return expense.date.getFullYear() == yearSelected
+    })
 
     const SaveYear = (year : string) => {
         setYear(year)
@@ -13,13 +18,7 @@ const Expenses = (props: any) => {
     return (
         <div>
             <ExpensesFilter selected={yearSelected} onYearSelected={SaveYear}/>
-            {
-                props.expensesList.map((expense : any) => 
-                <ExpenseItem 
-                title={expense.title}
-                date={expense.date}
-                price={expense.price} />)
-            }
+            <ExpensesList items={expensesByYearSelected}/>
         </div>
     )
 }

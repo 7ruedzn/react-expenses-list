@@ -10,24 +10,18 @@ interface Props {
 }
 
 const ExpenseItem = (props: Props) => {
-
-  const [title, setTitle] = useState(props.title)
-
-  const clickHandler = () => {
-    setTitle('updated!!!')
-  }
-
   return (
-      <Card>
-        <div className="expense-item">
-          <ExpenseDate date={props.date} />
-          <div className="name-price">
-              <h2 className="name">{title}</h2>
-              <div className="price">${props.price}</div>
+    <li>
+        <Card>
+          <div className="expense-item">
+            <ExpenseDate date={props.date} />
+            <div className="name-price">
+                <h2 className="name">{props.title}</h2>
+                <div className="price">${props.price}</div>
+            </div>
           </div>
-          <button onClick={clickHandler}>oioioi</button>
-        </div>
-      </Card>
+        </Card>
+    </li>
   );
 }
 

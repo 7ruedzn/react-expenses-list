@@ -3,6 +3,7 @@ import './NewExpense.scss'
 import Card from '../Card/Card'
 
 const NewExpense = (props : any) => {
+    const [showAddExpense, setShowAddExpense] = useState(false)
     const [formInputs, setFormInputs] = useState({
         enteredTitle: '',
         enteredAmount: '',
@@ -31,8 +32,9 @@ const NewExpense = (props : any) => {
         e.preventDefault()
 
         const expenseData = {
+            id: Math.random() * 100,
             title: formInputs.enteredTitle,
-            amount: formInputs.enteredAmount,
+            price: formInputs.enteredAmount,
             date: new Date(formInputs.enteredDate) 
         }
 
@@ -44,7 +46,24 @@ const NewExpense = (props : any) => {
             enteredDate: '',
         })
 
+        setShowAddExpense(false)
         console.log(expenseData)
+    }
+
+    const ShowAddExpense = () => {
+        setShowAddExpense(true)   
+    }
+
+    const HideAddExpense = () => {
+        setShowAddExpense(false)
+    }
+
+    if(!showAddExpense){
+        return (
+            <div className='new-expense-container'>
+                <button id='add-expense' onClick={ShowAddExpense} >Add New Expense</button>
+            </div>
+        )
     }
 
     return (
@@ -64,6 +83,7 @@ const NewExpense = (props : any) => {
                         <input type="date" value={formInputs.enteredDate} onChange={dateChange}/>
                     </div>
                     <button type='submit'>Send</button>
+                    <button type='button' onClick={HideAddExpense}>Cancel</button>
                 </form>
             </div>
         </Card>
