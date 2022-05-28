@@ -7,20 +7,20 @@ import { useState } from "react";
 const expensesItems = [
   {
     id: 1,
-    title: "Car",
-    price: 48934,
+    title: "Book",
+    price: 40.97,
     date: new Date(2022, 1, 2),
   },
   {
     id: 2,
     title: "Bicicleta",
-    price: 434,
-    date: new Date(2021, 6, 12),
+    price: 25.50,
+    date: new Date(2022, 6, 12),
   },
   {
     id: 3,
-    title: "Car",
-    price: 48934,
+    title: "Mouse",
+    price: 35.35,
     date: new Date(2019, 5, 5),
   },
 ];

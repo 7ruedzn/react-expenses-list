@@ -15,9 +15,9 @@ const ExpenseItem = (props: Props) => {
         <Card>
           <div className="expense-item">
             <ExpenseDate date={props.date} />
-            <div className="name-price">
+            <div className="expense-item-description">
                 <h2 className="name">{props.title}</h2>
-                <div className="price">${props.price}</div>
+                <div className="expense-item-price">${props.price}</div>
             </div>
           </div>
         </Card>

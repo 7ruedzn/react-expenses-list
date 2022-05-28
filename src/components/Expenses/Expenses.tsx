@@ -1,5 +1,5 @@
 import { useState } from "react"
-import ExpenseItem from "../ExpenseItem/ExpenseItem"
+import ExpensesChart from "../Chart/ExpensesChart"
 import ExpensesFilter from "../ExpensesFilter/ExpensesFilter"
 import ExpensesList from "../ExpensesList/ExpensesList"
 
@@ -18,6 +18,7 @@ const Expenses = (props: any) => {
     return (
         <div>
             <ExpensesFilter selected={yearSelected} onYearSelected={SaveYear}/>
+            <ExpensesChart expensesByYear={expensesByYearSelected}/>
             <ExpensesList items={expensesByYearSelected}/>
         </div>
     )

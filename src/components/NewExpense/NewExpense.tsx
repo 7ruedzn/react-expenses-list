@@ -6,7 +6,7 @@ const NewExpense = (props : any) => {
     const [showAddExpense, setShowAddExpense] = useState(false)
     const [formInputs, setFormInputs] = useState({
         enteredTitle: '',
-        enteredAmount: '',
+        enteredPrice: '',
         enteredDate: ''
     })
 
@@ -18,7 +18,7 @@ const NewExpense = (props : any) => {
 
     const amountChange = (e : any) => {
         setFormInputs((prevState) => {
-            return {...prevState, enteredAmount: e.target.value}
+            return {...prevState, enteredPrice: e.target.value}
         })    
     }
 
@@ -34,7 +34,7 @@ const NewExpense = (props : any) => {
         const expenseData = {
             id: Math.random() * 100,
             title: formInputs.enteredTitle,
-            price: formInputs.enteredAmount,
+            price: +formInputs.enteredPrice,
             date: new Date(formInputs.enteredDate) 
         }
 
@@ -42,12 +42,11 @@ const NewExpense = (props : any) => {
 
         setFormInputs({
             enteredTitle: '',
-            enteredAmount: '',
+            enteredPrice: '',
             enteredDate: '',
         })
 
         setShowAddExpense(false)
-        console.log(expenseData)
     }
 
     const ShowAddExpense = () => {
@@ -60,7 +59,7 @@ const NewExpense = (props : any) => {
 
     if(!showAddExpense){
         return (
-            <div className='new-expense-container'>
+            <div className='new-expense'>
                 <button id='add-expense' onClick={ShowAddExpense} >Add New Expense</button>
             </div>
         )
@@ -68,22 +67,24 @@ const NewExpense = (props : any) => {
 
     return (
         <Card>
-            <div className="new-expense-container">
+            <div className="new-expense">
                 <form onSubmit={submitHandler}>
                     <div className="">
                         <label htmlFor="">Title</label>
                         <input type="text" value={formInputs.enteredTitle} onChange={titleChange}/>
                     </div>
                     <div className="">
-                        <label htmlFor="">Amount</label>
-                        <input type="number" value={formInputs.enteredAmount} step={10} min={0.01}  onChange={amountChange}/>
+                        <label htmlFor="">Price</label>
+                        <input type="number" value={formInputs.enteredPrice} step={10} min={0.01}  onChange={amountChange}/>
                     </div>
                     <div className="">
                         <label htmlFor="">Date</label>
                         <input type="date" value={formInputs.enteredDate} onChange={dateChange}/>
                     </div>
-                    <button type='submit'>Send</button>
-                    <button type='button' onClick={HideAddExpense}>Cancel</button>
+                    <div className="actions">
+                        <button type='submit'>Send</button>
+                        <button type='button' onClick={HideAddExpense}>Cancel</button>
+                    </div>
                 </form>
             </div>
         </Card>
