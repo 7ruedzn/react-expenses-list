@@ -1,7 +1,7 @@
 import { useState } from "react"
 import ExpensesChart from "../Chart/ExpensesChart"
-import ExpensesFilter from "../ExpensesFilter/ExpensesFilter"
-import ExpensesList from "../ExpensesList/ExpensesList"
+import ExpensesFilter from "../Expenses/ExpensesFilter/ExpensesFilter"
+import ExpensesList from "../Expenses/ExpensesList/ExpensesList"
 
 const Expenses = (props: any) => {
     const [yearSelected, setYear] = useState('2020')

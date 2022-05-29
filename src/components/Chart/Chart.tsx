@@ -1,3 +1,4 @@
+import Card from '../Card/Card'
 import './Chart.scss'
 import ChartBar from './ChartBar'
 
@@ -6,14 +7,16 @@ const Chart = (props : any) => {
     const maxValue = Math.max(...dataPointValues)
 
     return (
-        <div className='chart'>
-            {props.dataPoints.map((dataPoint : any) =>
-            <ChartBar
-            key={dataPoint.label} 
-            value={dataPoint.value}
-            maxValue={maxValue}
-            label={dataPoint.label} />)}
-        </div>
+        <Card>
+            <div className='chart'>
+                {props.dataPoints.map((dataPoint : any) =>
+                <ChartBar
+                key={dataPoint.label} 
+                value={dataPoint.value}
+                maxValue={maxValue}
+                label={dataPoint.label} />)}
+            </div>
+        </Card>
     )
 }
 

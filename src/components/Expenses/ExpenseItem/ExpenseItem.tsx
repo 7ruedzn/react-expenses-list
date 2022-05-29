@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./ExpenseItem.scss";
 import ExpenseDate from "../ExpenseDate/ExpenseDate";
-import Card from '../Card/Card'
+import Card from '../../Card/Card'
 
 interface Props {
   date: Date;

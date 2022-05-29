@@ -10,10 +10,10 @@ const ExpenseDate = (props: Props) => {
     const day = props.date.toLocaleDateString('pt-BR', { month: "2-digit" })
     
     return (
-        <div className="date-container">
-            <p>{year}</p>
-            <p className="month">{month}</p>
-            <p className='day'>{day}</p>
+        <div className="expense-date">
+            <div className="expense-date-month">{month}</div>
+            <div className='expense-date-year'>{year}</div>
+            <div className='expense-date-day'>{day}</div>
         </div>
     )
 }

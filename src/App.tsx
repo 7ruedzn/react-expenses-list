@@ -1,6 +1,6 @@
 import "./App.scss";
-import Card from './components/Card/Card'
-import NewExpense from "./components/NewExpense/NewExpense";
+import Card from './components/Card/Card';
+import NewExpense from "./components/Expenses/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses";
 import { useState } from "react";
 
@@ -33,8 +33,6 @@ const App = () => {
     setExpenses((prevExpenses) => {
       return [expense, ...prevExpenses]
     })
-    console.log(`Expense in App.tsx -> ${expense}`)
-    console.log(`Expense in App.tsx -> ${expensesItems}`)
   }
   
   return (

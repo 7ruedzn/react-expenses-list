@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './NewExpense.scss'
-import Card from '../Card/Card'
+import Card from '../../Card/Card'
 
 const NewExpense = (props : any) => {
     const [showAddExpense, setShowAddExpense] = useState(false)
